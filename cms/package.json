@@ -1,0 +1,12 @@
+{
+  "name": "cms",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "yarn http-server ./data -p 3005"
+  },
+  "dependencies": {
+    "http-server": "^14.1.1"
+  }
+}

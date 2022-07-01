@@ -1,0 +1,7 @@
+{
+  "imports": {
+    "@isomorphic-mf/root-config": "https://storage.googleapis.com/isomorphic.microfrontends.app/root-config/016db7599625c5e00526f64850e0c845201d0f81/isomorphic-mf-root-config.js",
+    "@isomorphic-mf/pokemons": "https://storage.googleapis.com/isomorphic.microfrontends.app/pokemons/8bd859cb4ca90b34f577c701aeaa1dcdada3a164/isomorphic-mf-pokemons.js",
+    "@isomorphic-mf/pokemons/": "https://storage.googleapis.com/isomorphic.microfrontends.app/pokemons/8bd859cb4ca90b34f577c701aeaa1dcdada3a164/"
+  }
+}

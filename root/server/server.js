@@ -9,8 +9,8 @@ app.set("view engine", "ejs");
 app.set("views", path.resolve(process.cwd(), "./server/views"));
 
 if (!process.env.PORT) {
-  console.log(`App is hosted at http://localhost:9000/`);
+  console.log(`App is hosted at http://localhost:3001/`);
 }
 
-const port = process.env.PORT || 9000;
+const port = process.env.PORT || 3001;
 app.listen(port);
