@@ -1,5 +1,5 @@
 import React from "react";
 
-export default function Root(props) {
-  return <div>Look at me I'm an app1 version 1</div>;
+export default function Root() {
+  return <div>App 1</div>;
 }

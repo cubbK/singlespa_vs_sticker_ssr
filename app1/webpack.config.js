@@ -3,24 +3,24 @@ const singleSpaDefaults = require("webpack-config-single-spa-react");
 const path = require("path");
 const EsmWebpackPlugin = require("@purtuga/esm-webpack-plugin");
 
-module.exports = (webpackConfigEnv) => {
+module.exports = webpackConfigEnv => {
   const defaultConfig = singleSpaDefaults({
     orgName: "isomorphic-mf",
-    projectName: "navbar",
-    webpackConfigEnv,
+    projectName: "pokemons",
+    webpackConfigEnv
   });
 
   const serverConfig = singleSpaDefaults({
     orgName: "isomorphic-mf",
-    projectName: "navbar",
-    webpackConfigEnv,
+    projectName: "pokemons",
+    webpackConfigEnv
   });
 
   defaultConfig.plugins = defaultConfig.plugins.filter(
-    (p) => p.constructor.name !== "CleanWebpackPlugin"
+    p => p.constructor.name !== "CleanWebpackPlugin"
   );
   serverConfig.plugins = serverConfig.plugins.filter(
-    (p) => p.constructor.name !== "CleanWebpackPlugin"
+    p => p.constructor.name !== "CleanWebpackPlugin"
   );
 
   return [
@@ -33,14 +33,16 @@ module.exports = (webpackConfigEnv) => {
       output: {
         library: "mf",
         libraryTarget: "var",
-        filename: "server.mjs",
+        filename: "server.mjs"
       },
-      externals: defaultConfig.externals.concat(/react-dom\/.+/),
+      externals: defaultConfig.externals
+        .concat(/react-dom\/.+/)
+        .concat(/^@isomorphic-mf\/?.*$/),
       plugins: [
         new EsmWebpackPlugin({
-          moduleExternals: true,
-        }),
-      ],
-    }),
+          moduleExternals: true
+        })
+      ]
+    })
   ];
 };

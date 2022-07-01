@@ -1,13 +1,13 @@
 import { app } from "./app.js";
 import {
   constructServerLayout,
-  sendLayoutHTTPResponse,
+  sendLayoutHTTPResponse
 } from "single-spa-layout/server";
 import _ from "lodash";
 import { getImportMaps } from "single-spa-web-server-utils";
 
 const serverLayout = constructServerLayout({
-  filePath: "server/views/index.html",
+  filePath: "server/views/index.html"
 });
 
 app.use("*", (req, res, next) => {
@@ -15,29 +15,22 @@ app.use("*", (req, res, next) => {
   const importSuffix = developmentMode ? `?ts=${Date.now()}` : "";
 
   const importMapsPromise = getImportMaps({
-    url:
-      "https://storage.googleapis.com/isomorphic.microfrontends.app/importmap.json",
+    url: "http://localhost:3005/import_maps.json",
     nodeKeyFilter(importMapKey) {
       return importMapKey.startsWith("@isomorphic-mf");
     },
     req,
-    allowOverrides: true,
+    allowOverrides: true
   }).then(({ nodeImportMap, browserImportMap }) => {
     global.nodeLoader.setImportMapPromise(Promise.resolve(nodeImportMap));
-    if (developmentMode) {
-      browserImportMap.imports["@isomorphic-mf/root-config"] =
-        "http://localhost:9876/isomorphic-mf-root-config.js";
-      browserImportMap.imports["@isomorphic-mf/root-config/"] =
-        "http://localhost:9876/";
-    }
     return { nodeImportMap, browserImportMap };
   });
 
   const props = {
     user: {
       id: 1,
-      name: "Test User",
-    },
+      name: "Test User"
+    }
   };
 
   const fragments = {
@@ -48,10 +41,10 @@ app.use("*", (req, res, next) => {
         null,
         2
       )}</script>`;
-    },
+    }
   };
 
-  const renderFragment = (name) => fragments[name]();
+  const renderFragment = name => fragments[name]();
 
   sendLayoutHTTPResponse({
     serverLayout,
@@ -62,7 +55,7 @@ app.use("*", (req, res, next) => {
       await importMapsPromise;
       const [app, props] = await Promise.all([
         import(appName + `/server.mjs${importSuffix}`),
-        propsPromise,
+        propsPromise
       ]);
       return app.serverRender(props);
     },
@@ -70,7 +63,7 @@ app.use("*", (req, res, next) => {
       await importMapsPromise;
       const [app, props] = await Promise.all([
         import(appName + `/server.mjs${importSuffix}`),
-        propsPromise,
+        propsPromise
       ]);
       return app.getResponseHeaders(props);
     },
@@ -79,10 +72,10 @@ app.use("*", (req, res, next) => {
     },
     assembleFinalHeaders(allHeaders) {
       return Object.assign({}, Object.values(allHeaders));
-    },
+    }
   })
     .then(next)
-    .catch((err) => {
+    .catch(err => {
       console.error(err);
       res.status(500).send("A server error occurred");
     });
