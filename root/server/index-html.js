@@ -5,12 +5,19 @@ import {
 } from "single-spa-layout/server";
 import _ from "lodash";
 import { getImportMaps } from "single-spa-web-server-utils";
+import fetch from "node-fetch";
 
-const serverLayout = constructServerLayout({
-  filePath: "server/views/index.html"
-});
+async function getServerLayout() {
+  const data = await fetch("http://localhost:3005/views/index.html");
+  const viewHTML = await data.text();
+  const serverLayout = constructServerLayout({
+    html: viewHTML
+  });
+  console.log({ viewHTML });
+  return serverLayout;
+}
 
-app.use("*", (req, res, next) => {
+app.use("*", async (req, res, next) => {
   const developmentMode = process.env.NODE_ENV === "development";
   const importSuffix = developmentMode ? `?ts=${Date.now()}` : "";
 
@@ -46,6 +53,8 @@ app.use("*", (req, res, next) => {
 
   const renderFragment = name => fragments[name]();
 
+  const serverLayout = await getServerLayout();
+  console.log({ serverLayout });
   sendLayoutHTTPResponse({
     serverLayout,
     urlPath: req.originalUrl,

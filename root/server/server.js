@@ -6,8 +6,8 @@ import "./index-html.js";
 
 app.use(morgan("tiny"));
 app.set("view engine", "ejs");
-app.set("views", path.resolve(process.cwd(), "./server/views"));
-
+app.set("views", "http://localhost:3005/views");
+console.log(app);
 if (!process.env.PORT) {
   console.log(`App is hosted at http://localhost:3001/`);
 }
