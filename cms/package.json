@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "yarn http-server ./data -p 3005"
+    "start": "yarn http-server ./data -p 3005 --cors"
   },
   "dependencies": {
     "http-server": "^14.1.1"

@@ -1,17 +1,17 @@
-System.register(["react", "react-dom"], function (e) {
+System.register(["react", "react-dom"], function(e) {
   var t, n;
   return {
     setters: [
-      function (e) {
+      function(e) {
         t = e;
       },
-      function (e) {
+      function(e) {
         n = e;
-      },
+      }
     ],
-    execute: function () {
+    execute: function() {
       e(
-        (function (e) {
+        (function(e) {
           var t = {};
           function n(r) {
             if (t[r]) return t[r].exports;
@@ -21,19 +21,19 @@ System.register(["react", "react-dom"], function (e) {
           return (
             (n.m = e),
             (n.c = t),
-            (n.d = function (e, t, r) {
+            (n.d = function(e, t, r) {
               n.o(e, t) ||
                 Object.defineProperty(e, t, { enumerable: !0, get: r });
             }),
-            (n.r = function (e) {
+            (n.r = function(e) {
               "undefined" != typeof Symbol &&
                 Symbol.toStringTag &&
                 Object.defineProperty(e, Symbol.toStringTag, {
-                  value: "Module",
+                  value: "Module"
                 }),
                 Object.defineProperty(e, "__esModule", { value: !0 });
             }),
-            (n.t = function (e, t) {
+            (n.t = function(e, t) {
               if ((1 & t && (e = n(e)), 8 & t)) return e;
               if (4 & t && "object" == typeof e && e && e.__esModule) return e;
               var r = Object.create(null);
@@ -41,7 +41,7 @@ System.register(["react", "react-dom"], function (e) {
                 (n.r(r),
                 Object.defineProperty(r, "default", {
                   enumerable: !0,
-                  value: e,
+                  value: e
                 }),
                 2 & t && "string" != typeof e)
               )
@@ -49,49 +49,49 @@ System.register(["react", "react-dom"], function (e) {
                   n.d(
                     r,
                     o,
-                    function (t) {
+                    function(t) {
                       return e[t];
                     }.bind(null, o)
                   );
               return r;
             }),
-            (n.n = function (e) {
+            (n.n = function(e) {
               var t =
                 e && e.__esModule
-                  ? function () {
+                  ? function() {
                       return e.default;
                     }
-                  : function () {
+                  : function() {
                       return e;
                     };
               return n.d(t, "a", t), t;
             }),
-            (n.o = function (e, t) {
+            (n.o = function(e, t) {
               return Object.prototype.hasOwnProperty.call(e, t);
             }),
             (n.p = ""),
             n((n.s = 2))
           );
         })([
-          function (e, n) {
+          function(e, n) {
             e.exports = t;
           },
-          function (e, t) {
+          function(e, t) {
             e.exports = n;
           },
-          function (e, t, n) {
+          function(e, t, n) {
             "use strict";
             n.r(t),
-              n.d(t, "bootstrap", function () {
+              n.d(t, "bootstrap", function() {
                 return v;
               }),
-              n.d(t, "mount", function () {
+              n.d(t, "mount", function() {
                 return E;
               }),
-              n.d(t, "unmount", function () {
+              n.d(t, "unmount", function() {
                 return w;
               }),
-              (function (e, t) {
+              (function(e, t) {
                 if (
                   (t || (t = 1), "string" != typeof e || 0 === e.trim().length)
                 )
@@ -112,7 +112,7 @@ System.register(["react", "react-dom"], function (e) {
                       "' in the SystemJS registry. Did you misspell the name of your module?"
                   );
                 }
-                n.p = (function (e, t) {
+                n.p = (function(e, t) {
                   const n = new URL(e),
                     r = new URL(e).pathname;
                   let o = 0,
@@ -131,7 +131,7 @@ System.register(["react", "react-dom"], function (e) {
                     );
                   return (n.pathname = n.pathname.slice(0, a + 1)), n.href;
                 })(r, t);
-              })("@app1");
+              })("@isomorphic-mf/app1");
             var r = n(0),
               o = n.n(r),
               a = n(1),
@@ -140,10 +140,10 @@ System.register(["react", "react-dom"], function (e) {
               return (c =
                 "function" == typeof Symbol &&
                 "symbol" == typeof Symbol.iterator
-                  ? function (e) {
+                  ? function(e) {
                       return typeof e;
                     }
-                  : function (e) {
+                  : function(e) {
                       return e &&
                         "function" == typeof Symbol &&
                         e.constructor === Symbol &&
@@ -159,7 +159,7 @@ System.register(["react", "react-dom"], function (e) {
                       value: n,
                       enumerable: !0,
                       configurable: !0,
-                      writable: !0,
+                      writable: !0
                     })
                   : (e[t] = n),
                 e
@@ -170,7 +170,7 @@ System.register(["react", "react-dom"], function (e) {
               if (Object.getOwnPropertySymbols) {
                 var r = Object.getOwnPropertySymbols(e);
                 t &&
-                  (r = r.filter(function (t) {
+                  (r = r.filter(function(t) {
                     return Object.getOwnPropertyDescriptor(e, t).enumerable;
                   })),
                   n.push.apply(n, r);
@@ -187,19 +187,19 @@ System.register(["react", "react-dom"], function (e) {
                 domElements: {},
                 errorBoundary: null,
                 domElementGetter: null,
-                parcelCanUpdate: !0,
+                parcelCanUpdate: !0
               };
             function m(e, t) {
               return e.rootComponent
                 ? Promise.resolve()
-                : e.loadRootComponent(t).then(function (t) {
+                : e.loadRootComponent(t).then(function(t) {
                     e.rootComponent = t;
                   });
             }
             function d(e, t) {
-              return new Promise(function (n, r) {
+              return new Promise(function(n, r) {
                 e.suppressComponentDidCatchWarning ||
-                  !(function (e) {
+                  !(function(e) {
                     if (
                       !(
                         e &&
@@ -230,23 +230,23 @@ System.register(["react", "react-dom"], function (e) {
                           "'s rootComponent does not implement an error boundary.  If using a functional component, consider providing an opts.errorBoundary to singleSpaReact(opts)."
                         )
                       ));
-                var o = (function (e, t) {
+                var o = (function(e, t) {
                   return t.domElement
-                    ? function () {
+                    ? function() {
                         return t.domElement;
                       }
                     : t.domElementGetter
                     ? t.domElementGetter
                     : e.domElementGetter
                     ? e.domElementGetter
-                    : (function (e) {
+                    : (function(e) {
                         var t = e.appName || e.name;
                         if (!t)
                           throw Error(
                             "single-spa-react was not given an application name as a prop, so it can't make a unique dom element container for the react application"
                           );
                         var n = "single-spa-application:".concat(t);
-                        return function () {
+                        return function() {
                           var e = document.getElementById(n);
                           return (
                             e ||
@@ -265,7 +265,7 @@ System.register(["react", "react-dom"], function (e) {
                     )
                   );
                 var a = b(e, t),
-                  i = (function (e, t) {
+                  i = (function(e, t) {
                     var n = e(t);
                     if (!n)
                       throw new Error(
@@ -279,29 +279,29 @@ System.register(["react", "react-dom"], function (e) {
                 h({
                   elementToRender: a,
                   domElement: i,
-                  whenFinished: function () {
+                  whenFinished: function() {
                     n(this);
                   },
-                  opts: e,
+                  opts: e
                 }),
                   (e.domElements[t.name] = i);
               });
             }
             function f(e, t) {
-              return Promise.resolve().then(function () {
+              return Promise.resolve().then(function() {
                 e.ReactDOM.unmountComponentAtNode(e.domElements[t.name]),
                   delete e.domElements[t.name];
               });
             }
             function y(e, t) {
-              return new Promise(function (n, r) {
+              return new Promise(function(n, r) {
                 h({
                   elementToRender: b(e, t),
                   domElement: e.domElements[t.name],
-                  whenFinished: function () {
+                  whenFinished: function() {
                     n(this);
                   },
-                  opts: e,
+                  opts: e
                 });
               });
             }
@@ -325,12 +325,12 @@ System.register(["react", "react-dom"], function (e) {
                 e.errorBoundary &&
                   ((e.errorBoundaryClass =
                     e.errorBoundaryClass ||
-                    (function (e) {
+                    (function(e) {
                       function t(n) {
                         e.React.Component.apply(this, arguments),
                           (this.state = {
                             caughtError: null,
-                            caughtErrorInfo: null,
+                            caughtErrorInfo: null
                           }),
                           (t.displayName = "SingleSpaReactErrorBoundary(".concat(
                             n.name,
@@ -341,7 +341,7 @@ System.register(["react", "react-dom"], function (e) {
                         (t.prototype = Object.create(
                           e.React.Component.prototype
                         )),
-                        (t.prototype.render = function () {
+                        (t.prototype.render = function() {
                           return this.state.caughtError
                             ? e.errorBoundary(
                                 this.state.caughtError,
@@ -350,7 +350,7 @@ System.register(["react", "react-dom"], function (e) {
                               )
                             : this.props.children;
                         }),
-                        (t.prototype.componentDidCatch = function (e, t) {
+                        (t.prototype.componentDidCatch = function(e, t) {
                           this.setState({ caughtError: e, caughtErrorInfo: t });
                         }),
                         t
@@ -360,16 +360,16 @@ System.register(["react", "react-dom"], function (e) {
                 r
               );
             }
-            const g = (function (e) {
+            const g = (function(e) {
                 if ("object" !== c(e))
                   throw new Error(
                     "single-spa-react requires a configuration object"
                   );
-                var t = (function (e) {
+                var t = (function(e) {
                   for (var t = 1; t < arguments.length; t++) {
                     var n = null != arguments[t] ? arguments[t] : {};
                     t % 2
-                      ? s(Object(n), !0).forEach(function (t) {
+                      ? s(Object(n), !0).forEach(function(t) {
                           u(e, t, n[t]);
                         })
                       : Object.getOwnPropertyDescriptors
@@ -377,7 +377,7 @@ System.register(["react", "react-dom"], function (e) {
                           e,
                           Object.getOwnPropertyDescriptors(n)
                         )
-                      : s(Object(n)).forEach(function (t) {
+                      : s(Object(n)).forEach(function(t) {
                           Object.defineProperty(
                             e,
                             t,
@@ -405,28 +405,24 @@ System.register(["react", "react-dom"], function (e) {
                 var n = {
                   bootstrap: m.bind(null, t),
                   mount: d.bind(null, t),
-                  unmount: f.bind(null, t),
+                  unmount: f.bind(null, t)
                 };
                 return t.parcelCanUpdate && (n.update = y.bind(null, t)), n;
               })({
                 React: o.a,
                 ReactDOM: i.a,
-                rootComponent: function (e) {
-                  return o.a.createElement(
-                    "div",
-                    null,
-                    "Look at me I'm an app1 version 1"
-                  );
+                rootComponent: function() {
+                  return o.a.createElement("div", null, "App 1 ssr");
                 },
-                renderType: "hydrate",
+                renderType: "hydrate"
               }),
               v = g.bootstrap,
               E = g.mount,
               w = g.unmount;
-          },
+          }
         ])
       );
-    },
+    }
   };
 });
-//# sourceMappingURL=isomorphic-mf-navbar.js.map
+//# sourceMappingURL=isomorphic-mf-app1.js.map
